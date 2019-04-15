@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Fitnessz.Common")]
+[assembly: AssemblyTitle("Fitnessz.Logic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Fitnessz.Common")]
+[assembly: AssemblyProduct("Fitnessz.Logic")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8f234c0b-4437-419a-8b2e-2a87a2c6e67d")]
+[assembly: Guid("2a1f0315-247c-4c32-ab1b-87da3b48c7ad")]
 
 // Version information for an assembly consists of the following four values:
 //

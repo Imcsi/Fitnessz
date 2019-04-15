@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66178A12-B18C-4C1A-819F-6424FA8D8D20}</ProjectGuid>
+    <ProjectGuid>{C78B71C3-34CA-4FC7-9D39-A61C0B89F998}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fitnessz.ViewModel</RootNamespace>
-    <AssemblyName>Fitnessz.ViewModel</AssemblyName>
+    <RootNamespace>Fitnessz.Model</RootNamespace>
+    <AssemblyName>Fitnessz.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,15 +56,12 @@
       <Project>{8f234c0b-4437-419a-8b2e-2a87a2c6e67d}</Project>
       <Name>Fitnessz.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Fitnessz.Logic\Fitnessz.Logic.csproj">
-      <Project>{2a1f0315-247c-4c32-ab1b-87da3b48c7ad}</Project>
-      <Name>Fitnessz.Logic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Fitnessz.Model\Fitnessz.Model.csproj">
-      <Project>{c78b71c3-34ca-4fc7-9d39-a61c0b89f998}</Project>
-      <Name>Fitnessz.Model</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
