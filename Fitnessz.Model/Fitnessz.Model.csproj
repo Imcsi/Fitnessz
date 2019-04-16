@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Belepesek.cs" />
+    <Compile Include="Berlet.cs" />
+    <Compile Include="Kliens.cs" />
+    <Compile Include="KliensBerlet.cs" />
+    <Compile Include="KliensMoldelDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
