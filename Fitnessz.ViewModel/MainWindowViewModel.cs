@@ -1,4 +1,5 @@
 ﻿using Fitnessz.Common.MVVM;
+using Fitnessz.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,13 @@ namespace Fitnessz.ViewModel
 {
     public class MainWindowViewModel:ViewModelBase
     {
-        //public static CatalogController CatalogController;
+        public static FitnesszController FitnesszController;
 
         public MainWindowViewModel()
         {
-            //CatalogController = new CatalogController();
+            
             this.CloseCommand = new RelayCommand(this.CloseCommandExecute);
+            Data.FitnesszController.GetBelepesek();
         }
 
         public RelayCommand CloseCommand { get; set; }

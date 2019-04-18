@@ -38,7 +38,7 @@ namespace Fitnessz
 
             {
                 // DBInitializer dbinit = new DBInitializer();
-                // dbinit.InitializeDatabase(new TMCatalogDB());
+                // dbinit.InitializeDatabase(new KliensModelDB());
             }
             catch (Exception ex)
             {

@@ -17,21 +17,21 @@ namespace Fitnessz.Model
 
         public int BerletId { get; set; }
 
-        public string NapokSzama { get; set; }
+        public int NapokSzama { get; set; }
 
-        public string KezdetiNap { get; set; }
+        public DateTime KezdetiNap { get; set; }
 
-        public string BelepesekSzama { get; set; }
+        public int BelepesekSzama { get; set; }
 
         public int EladasiAr { get; set; }
 
         public bool Ervenyesseg { get; set; }
 
-        public Berlet Berlet { get; set; }
+        public virtual Berlet Berlet { get; set; }
 
-        public Kliens Kliens { get; set; }
+        public virtual Kliens Kliens { get; set; }
 
-        public Belepesek Belepesek { get; set; }
+        public virtual Belepes Belepesek { get; set; }
 
     }
 }

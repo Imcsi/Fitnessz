@@ -17,17 +17,20 @@ namespace Fitnessz.Model
 
         public int Ar { get; set; }
 
-        public string NapokSzama { get; set; }
+        public int NapokSzama { get; set; }
 
-        public string NapontaHanyszor { get; set; }
+        public int NapontaHanyszor { get; set; }
 
-        public string BelepesekSzama { get; set; }
+        public int BelepesekSzama { get; set; }
 
-        public string Hanytol { get; set; }
+        public int Hanytol { get; set; }
 
-        public string Hanyig { get; set; }
+        public int Hanyig { get; set; }
 
-        
+
+
+
+
 
 
     }

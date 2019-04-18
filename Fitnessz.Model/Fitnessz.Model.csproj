@@ -38,9 +38,13 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -51,12 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Belepesek.cs" />
+    <Compile Include="Belepes.cs" />
     <Compile Include="Berlet.cs" />
+    <Compile Include="DBContext\FitnesszModelDB.cs" />
     <Compile Include="Kliens.cs" />
     <Compile Include="KliensBerlet.cs" />
-    <Compile Include="KliensMoldelDB.cs" />
+    <Compile Include="Migrations\201904180832012_InitialCreate.cs" />
+    <Compile Include="Migrations\201904180832012_InitialCreate.Designer.cs">
+      <DependentUpon>201904180832012_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904180837143_fitnesszurl.cs" />
+    <Compile Include="Migrations\201904180837143_fitnesszurl.Designer.cs">
+      <DependentUpon>201904180837143_fitnesszurl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fitnessz.Common\Fitnessz.Common.csproj">
@@ -65,10 +82,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Migrations\201904180832012_InitialCreate.resx">
+      <DependentUpon>201904180832012_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904180837143_fitnesszurl.resx">
+      <DependentUpon>201904180837143_fitnesszurl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
