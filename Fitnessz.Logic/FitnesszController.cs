@@ -23,29 +23,25 @@ namespace Fitnessz.Logic
 
         public void GetBelepesek()
         {
-            using (var db = new FitnesszModelDB())
-            {
+            var x = fitnesszDatabase.Kliensek.ToList();
                 // Create and save a new Kliens
-                Console.Write("Enter a name for a new Kliens: ");
-                var name = Console.ReadLine();
+                //Console.Write("Enter a name for a new Kliens: ");
+                //var name = Console.ReadLine();
 
-                var kliens = new Kliens { KliensId=1,Nev=name} ;
-                db.Kliensek.Add(kliens);
-                db.SaveChanges();
+                //var kliens = new Kliens { KliensId=1,Nev=name} ;
+                //db.Kliensek.Add(kliens);
+               // db.SaveChanges();
 
                 // Display all Klines from the database
-                var query = from b in db.Kliensek
+                var query = from b in fitnesszDatabase.Kliensek
                             orderby b.Nev
                             select b;
 
-                Console.WriteLine("All kliens in the database:");
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item.Nev);
-                }
+                //Console.WriteLine("All kliens in the database:");
+            
 
                
-            }
+            
         }
     }
 }

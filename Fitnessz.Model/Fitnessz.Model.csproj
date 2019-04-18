@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Belepes.cs" />
     <Compile Include="Berlet.cs" />
+    <Compile Include="DBContext\DBInitializer.cs" />
     <Compile Include="DBContext\FitnesszModelDB.cs" />
     <Compile Include="Kliens.cs" />
     <Compile Include="KliensBerlet.cs" />
@@ -67,6 +68,10 @@
     <Compile Include="Migrations\201904180837143_fitnesszurl.cs" />
     <Compile Include="Migrations\201904180837143_fitnesszurl.Designer.cs">
       <DependentUpon>201904180837143_fitnesszurl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904180912568_fittneszurl.cs" />
+    <Compile Include="Migrations\201904180912568_fittneszurl.Designer.cs">
+      <DependentUpon>201904180912568_fittneszurl.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904180837143_fitnesszurl.resx">
       <DependentUpon>201904180837143_fitnesszurl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904180912568_fittneszurl.resx">
+      <DependentUpon>201904180912568_fittneszurl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

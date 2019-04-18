@@ -1,4 +1,5 @@
 ﻿using Fitnessz.Common.MVVM;
+using Fitnessz.Model.DBContext;
 using Fitnessz.View;
 using Fitnessz.ViewModel;
 using System;
@@ -37,8 +38,8 @@ namespace Fitnessz
             try
 
             {
-                // DBInitializer dbinit = new DBInitializer();
-                // dbinit.InitializeDatabase(new KliensModelDB());
+                DBInitializer dbinit = new DBInitializer();
+                dbinit.InitializeDatabase(new FitnesszModelDB());
             }
             catch (Exception ex)
             {

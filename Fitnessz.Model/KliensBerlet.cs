@@ -19,7 +19,7 @@ namespace Fitnessz.Model
 
         public int NapokSzama { get; set; }
 
-        public DateTime KezdetiNap { get; set; }
+        public string KezdetiNap { get; set; }
 
         public int BelepesekSzama { get; set; }
 

@@ -13,7 +13,7 @@ namespace Fitnessz.Model
         [Key]
         public int BelepesekId { get; set; }
 
-        public DateTime Datum { get; set; }
+        public string Datum { get; set; }
 
         public int KliensBerletId { get; set; }
 
