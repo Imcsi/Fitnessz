@@ -10,9 +10,9 @@ namespace Fitnessz.Logic
     {
         static Data()
         {
-            FitnesszController = new FitnesszController();
+            fitnesszController = new FitnesszController();
         }
 
-        public static FitnesszController FitnesszController { get; set; }
+        public static FitnesszController fitnesszController { get; set; }
     }
 }

@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace Fitnessz.Model
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Kliens
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KliensId { get; set; }
 
         public string Nev { get; set; }
@@ -23,6 +25,6 @@ namespace Fitnessz.Model
 
         public string  Nem { get; set; }
 
-
+        public bool Inaktiv { get; set; }
     }
 }

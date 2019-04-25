@@ -1,23 +1,44 @@
 ﻿<Window x:Class="Fitnessz.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   
+        xmlns:userControls="clr-namespace:Fitnessz.View.UserControls"
+        xmlns:templateSelectors="clr-namespace:Fitnessz.View.TemplateSelector"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        WindowState="Maximized"
-        >
+        WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate x:Key="KliensViewTemplate">
+            <userControls:KliensView/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DefaultHeaderTemplate">
+            <TextBlock Text="{Binding Header}"/>
+        </DataTemplate>
+
+
+        <templateSelectors:FitnesszContentTemplateSelector x:Key="FitnesszContentTemplateSelector"/>
+        <templateSelectors:FitnesszHeaderTemplateSelector x:Key="FitnesszHeaderTemplateSelector"/>
+
+        <Style TargetType ="{x:Type TabItem}">
+            <Setter Property="HeaderTemplateSelector" Value="{StaticResource FitnesszHeaderTemplateSelector}"/>
+        </Style>
+
+    </Window.Resources>
+    
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="Row0 Column0" Grid.Row="0" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Row0 Column1" Grid.Row="0" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TabControl Grid.Row="0" 
+                    ItemsSource="{Binding Contents}"
+                    SelectedItem="{Binding SelectedContent}"
+                    ContentTemplateSelector="{StaticResource FitnesszContentTemplateSelector}"/>
+
+
+
         
-
     </Grid>
-    
-    
-
 </Window>

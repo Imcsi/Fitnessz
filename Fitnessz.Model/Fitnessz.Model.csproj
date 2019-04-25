@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201904180912568_fittneszurl.Designer.cs">
       <DependentUpon>201904180912568_fittneszurl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904251128525_hozzaadInaktiv.cs" />
+    <Compile Include="Migrations\201904251128525_hozzaadInaktiv.Designer.cs">
+      <DependentUpon>201904251128525_hozzaadInaktiv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904180912568_fittneszurl.resx">
       <DependentUpon>201904180912568_fittneszurl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904251128525_hozzaadInaktiv.resx">
+      <DependentUpon>201904251128525_hozzaadInaktiv.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

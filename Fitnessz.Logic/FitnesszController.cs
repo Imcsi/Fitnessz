@@ -21,27 +21,48 @@ namespace Fitnessz.Logic
            
         }
 
-        public void GetBelepesek()
+
+        public  void KliensekMentese(Kliens kliens)
         {
-            var x = fitnesszDatabase.Kliensek.ToList();
-                // Create and save a new Kliens
-                //Console.Write("Enter a name for a new Kliens: ");
-                //var name = Console.ReadLine();
+            fitnesszDatabase.Kliensek.Add(kliens);
+             fitnesszDatabase.SaveChanges();
+        }
 
-                //var kliens = new Kliens { KliensId=1,Nev=name} ;
-                //db.Kliensek.Add(kliens);
-               // db.SaveChanges();
+        public void KliensAdatTorles(Kliens kliens)
+        {
+            var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId && k.Inaktiv==false);
 
-                // Display all Klines from the database
-                var query = from b in fitnesszDatabase.Kliensek
-                            orderby b.Nev
-                            select b;
+            if (item != null)
+            {
+                item.Inaktiv = true;
 
-                //Console.WriteLine("All kliens in the database:");
-            
+                fitnesszDatabase.SaveChanges();
 
-               
-            
+            }
+        }
+
+        public  void KliensAdatModositas(Kliens kliens)
+        {
+            var item =   fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId);
+
+            if(item != null)
+            {
+                item.Nev = kliens.Nev;
+                item.SzuletesiDatum = kliens.SzuletesiDatum;
+                item.TelSzam = kliens.TelSzam;
+                item.VonalKod = kliens.VonalKod;
+                item.Nem = kliens.Nem;
+
+                fitnesszDatabase.SaveChanges();
+
+            }
+        }
+
+        public  List<Kliens> KeresKliens(string nev)
+        {
+            return  fitnesszDatabase.Kliensek.Where(p => p.Nev.Contains(nev) && p.Inaktiv==false).ToList();
+           
+
         }
     }
 }
