@@ -27,6 +27,8 @@ namespace Fitnessz.Model
 
         public int Hanyig { get; set; }
 
+        public bool Inaktiv { get; set; }
+
 
 
 

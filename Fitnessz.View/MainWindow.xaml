@@ -15,6 +15,10 @@
             <TextBlock Text="{Binding Header}"/>
         </DataTemplate>
 
+        <DataTemplate x:Key="BerletTipusViewTemplate">
+            <userControls:BerletTipusView/>
+        </DataTemplate>
+
 
         <templateSelectors:FitnesszContentTemplateSelector x:Key="FitnesszContentTemplateSelector"/>
         <templateSelectors:FitnesszHeaderTemplateSelector x:Key="FitnesszHeaderTemplateSelector"/>

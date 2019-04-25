@@ -28,9 +28,28 @@ namespace Fitnessz.Logic
              fitnesszDatabase.SaveChanges();
         }
 
+        public void BerletTipusMentese(Berlet berlet)
+        {
+            fitnesszDatabase.Berletek.Add(berlet);
+            fitnesszDatabase.SaveChanges();
+        }
+
         public void KliensAdatTorles(Kliens kliens)
         {
             var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId && k.Inaktiv==false);
+
+            if (item != null)
+            {
+                item.Inaktiv = true;
+
+                fitnesszDatabase.SaveChanges();
+
+            }
+        }
+
+        public void BerletTipusAdatTorles(Berlet berlet)
+        {
+            var item = fitnesszDatabase.Berletek.FirstOrDefault(k => k.BerletId == berlet.BerletId && k.Inaktiv == false);
 
             if (item != null)
             {
@@ -58,10 +77,37 @@ namespace Fitnessz.Logic
             }
         }
 
+        public void BerletTipusAdatModositas(Berlet berlet)
+        {
+            var item = fitnesszDatabase.Berletek.FirstOrDefault(k => k.BerletId == berlet.BerletId);
+
+            if (item != null)
+            {
+                item.Tipus = berlet.Tipus;
+                item.Ar = berlet.Ar;
+                item.BelepesekSzama = berlet.BelepesekSzama;
+                item.Hanyig = berlet.Hanyig;
+                item.Hanytol = berlet.Hanytol;
+                item.NapokSzama = berlet.NapokSzama;
+                item.NapontaHanyszor = berlet.NapontaHanyszor;
+                
+
+                fitnesszDatabase.SaveChanges();
+
+            }
+        }
+
         public  List<Kliens> KeresKliens(string nev)
         {
             return  fitnesszDatabase.Kliensek.Where(p => p.Nev.Contains(nev) && p.Inaktiv==false).ToList();
            
+
+        }
+
+        public List<Berlet> KeresBerletTipus(string tipus)
+        {
+            return fitnesszDatabase.Berletek.Where(p => p.Tipus.Contains(tipus) && p.Inaktiv == false).ToList();
+
 
         }
     }
