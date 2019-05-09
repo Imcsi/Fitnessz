@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Fitnessz.View.UserControls.Berletek"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Fitnessz.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label>Nev:</Label>
+        <TextBox Grid.Column="1" Margin="0,0,0,10" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="1">Leiras:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Width="200" HorizontalAlignment="Left" Height="35"/>
+        <Label Grid.Row="2">Ervenyesseg:</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="3">Belepesek szama:</Label>
+        <TextBox Grid.Row="3" Grid.Column="1"  Margin="0,0,0,10" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="4">Tipusa:</Label>
+        <ComboBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Width="200" HorizontalAlignment="Left"></ComboBox>
+        <Label Grid.Row="5">Ara:</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="0,0,0,10" Width="200"  HorizontalAlignment="Left"/>
+        <Button Grid.Row="6" Content="Hozzaad" HorizontalAlignment="Center" Height="20"></Button>
+    </Grid>
+</UserControl>
