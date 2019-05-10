@@ -17,6 +17,11 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("KliensViewTemplate") as DataTemplate;
             }
+
+            else if(item is IBerletContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("BerletTipusViewTemplate") as DataTemplate;
+            }
             
 
             return base.SelectTemplate(item, container);

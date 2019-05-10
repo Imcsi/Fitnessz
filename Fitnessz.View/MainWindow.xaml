@@ -11,6 +11,10 @@
             <userControls:KliensView/>
         </DataTemplate>
 
+        <DataTemplate x:Key="BerletTipusViewTemplate">
+            <userControls:BerletView/>
+        </DataTemplate>
+        
         <DataTemplate x:Key="DefaultHeaderTemplate">
             <TextBlock Text="{Binding Header}"/>
         </DataTemplate>

@@ -64,5 +64,48 @@ namespace Fitnessz.Logic
            
 
         }
+
+        public void BerletAdatTorles(Berlet berlet)
+        {
+            var item = fitnesszDatabase.Berletek.FirstOrDefault(k => k.BerletId == berlet.BerletId );
+
+            if (item != null)
+            {
+                
+                fitnesszDatabase.SaveChanges();
+
+            }
+        }
+
+        public List<Berlet> KeresBerlet(int id)
+        {
+            return fitnesszDatabase.Berletek.Where(p => p.BerletId==id).ToList();
+
+
+        }
+
+        public void BerletAdatModositas(Berlet berlet)
+        {
+            var item = fitnesszDatabase.Berletek.FirstOrDefault(k => k.BerletId == berlet.BerletId);
+
+            if (item != null)
+            {
+                item.NapokSzama = berlet.NapokSzama;
+                item.KezdetiNap = berlet.KezdetiNap;
+                item.BelepesekSzama = berlet.BelepesekSzama;
+                item.Ar = berlet.Ar;
+                item.Hanytol = berlet.Hanytol;
+                item.Hanyig = berlet.Hanyig;
+                fitnesszDatabase.SaveChanges();
+
+            }
+        }
+
+        public void BerletekMentese(Berlet berlet)
+        {
+            fitnesszDatabase.Berletek.Add(berlet);
+            fitnesszDatabase.SaveChanges();
+        }
+
     }
 }
