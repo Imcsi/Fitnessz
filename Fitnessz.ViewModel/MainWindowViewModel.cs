@@ -31,6 +31,8 @@ namespace Fitnessz.ViewModel
 
             BerletTipusViewModel berletTipusViewModel = new BerletTipusViewModel();
             this.Contents.Add(berletTipusViewModel);
+            KliensBerleteViewModel kliensBerleteViewModel = new KliensBerleteViewModel();
+            this.Contents.Add(kliensBerleteViewModel);
 
         }
 

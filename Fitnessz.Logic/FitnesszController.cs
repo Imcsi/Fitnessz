@@ -27,6 +27,11 @@ namespace Fitnessz.Logic
             fitnesszDatabase.Kliensek.Add(kliens);
              fitnesszDatabase.SaveChanges();
         }
+        public void KliensBerleteMentese(KliensBerlet kliensBerlet)
+        {
+            fitnesszDatabase.KliensBerletek.Add(kliensBerlet);
+            fitnesszDatabase.SaveChanges();
+        }
 
         public void KliensAdatTorles(Kliens kliens)
         {
@@ -105,6 +110,17 @@ namespace Fitnessz.Logic
         {
             fitnesszDatabase.Berletek.Add(berlet);
             fitnesszDatabase.SaveChanges();
+        }
+
+        public List<Kliens> GetKliens(int kliensId)
+        {
+
+            return this.fitnesszDatabase.Kliensek.Where(x => x.KliensId == kliensId).ToList();
+        }
+        public List<Berlet> getBerletek(int berletId)
+        {
+
+            return this.fitnesszDatabase.Berletek.Where(x => x.BerletId == berletId).ToList();
         }
 
     }

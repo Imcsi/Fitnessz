@@ -14,7 +14,10 @@
         <DataTemplate x:Key="BerletTipusViewTemplate">
             <userControls:BerletView/>
         </DataTemplate>
-        
+        <DataTemplate x:Key="KliensBerleteViewTemplate">
+            <userControls:KliensBerleteView/>
+        </DataTemplate>
+
         <DataTemplate x:Key="DefaultHeaderTemplate">
             <TextBlock Text="{Binding Header}"/>
         </DataTemplate>
@@ -22,8 +25,8 @@
 
         <templateSelectors:FitnesszContentTemplateSelector x:Key="FitnesszContentTemplateSelector"/>
         <templateSelectors:FitnesszHeaderTemplateSelector x:Key="FitnesszHeaderTemplateSelector"/>
-
-        <Style TargetType ="{x:Type TabItem}">
+    
+            <Style TargetType ="{x:Type TabItem}">
             <Setter Property="HeaderTemplateSelector" Value="{StaticResource FitnesszHeaderTemplateSelector}"/>
         </Style>
 
