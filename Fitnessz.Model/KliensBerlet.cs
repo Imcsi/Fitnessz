@@ -27,11 +27,11 @@ namespace Fitnessz.Model
 
         public bool Ervenyesseg { get; set; }
 
-        public virtual Berlet Berlet { get; set; }
+        public int KliensId { get; set; }
 
-        public virtual Kliens Kliens { get; set; }
+        public int BelepesekId { get; set; }
 
-        public virtual Belepes Belepesek { get; set; }
+        public virtual Kliens Kliens {get; set;}
 
     }
 }

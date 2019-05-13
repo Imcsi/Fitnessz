@@ -20,7 +20,7 @@ namespace Fitnessz.Model.DBContext
 
         private void KliensBerlet(FitnesszModelDB context)
         {
-            context.KliensBerletek.Add(new KliensBerlet { BelepesekSzama = 10, BerletId = 1, NapokSzama = 30, VonalKod = "1213459876", EladasiAr = 50, Ervenyesseg = true, KezdetiNap="2019.05.01", KliensBerletId=2});
+            context.KliensBerletek.Add(new KliensBerlet { KliensBerletId = 1, BelepesekSzama = 10, BerletId = 1, NapokSzama = 30, VonalKod = "1213459876", EladasiAr = 50, Ervenyesseg = true, KezdetiNap = "2019.05.01", KliensId = 2, BelepesekId = 1 });
         }
 
         private void Kliens(FitnesszModelDB context)

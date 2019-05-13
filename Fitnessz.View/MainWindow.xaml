@@ -14,7 +14,11 @@
         <DataTemplate x:Key="BerletTipusViewTemplate">
             <userControls:BerletTipusView/>
         </DataTemplate>
-        
+
+        <DataTemplate x:Key="BerletHosszabbitasViewTemplate">
+            <userControls:BerletHosszabbitasView/>
+        </DataTemplate>
+
         <DataTemplate x:Key="DefaultHeaderTemplate">
             <TextBlock Text="{Binding Header}"/>
         </DataTemplate>

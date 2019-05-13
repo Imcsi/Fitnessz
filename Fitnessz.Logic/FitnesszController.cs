@@ -34,6 +34,11 @@ namespace Fitnessz.Logic
             fitnesszDatabase.SaveChanges();
         }
 
+        public List<KliensBerlet> KeresBerlet(string keresettBerlet)
+        {
+            throw new NotImplementedException();
+        }
+
         public void KliensAdatTorles(Kliens kliens)
         {
             var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId && k.Inaktiv==false);
@@ -77,6 +82,43 @@ namespace Fitnessz.Logic
             }
         }
 
+        public void BelepesSzamNoveles(KliensBerlet berlet,int novel)
+        {
+            var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
+            //string iDate = "05/05/2005";
+            DateTime oDate = Convert.ToDateTime(berlet.KezdetiNap);
+            var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
+            if (lejarasiIdo.Date < DateTime.Now.Date)
+            {
+                
+                item.BelepesekSzama = item.BelepesekSzama + novel;
+
+                fitnesszDatabase.SaveChangesAsync();
+            }
+
+
+        }
+
+        public void IdotartamNoveles(KliensBerlet berlet, DateTime novel)
+        {
+            
+            var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
+            DateTime oDate = Convert.ToDateTime(berlet.KezdetiNap); // az adatbazisban levo stringet datumma alakitja
+            var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
+            var hozzaadottErtek = novel - lejarasiIdo;
+            if (lejarasiIdo.Date < DateTime.Now.Date)
+            {
+
+                item.NapokSzama = item.NapokSzama + hozzaadottErtek.Days;
+
+                fitnesszDatabase.SaveChangesAsync();
+            }
+
+
+        }
+
+        
+
         public void BerletTipusAdatModositas(Berlet berlet)
         {
             var item = fitnesszDatabase.Berletek.FirstOrDefault(k => k.BerletId == berlet.BerletId);
@@ -109,6 +151,13 @@ namespace Fitnessz.Logic
             return fitnesszDatabase.Berletek.Where(p => p.Tipus.Contains(tipus) && p.Inaktiv == false).ToList();
 
 
+        }
+
+        public List<KliensBerlet> KeresesBerlet(string keresesiszo)
+        {
+            return fitnesszDatabase.KliensBerletek.Where(p => p.VonalKod.Contains(keresesiszo) || (from e in fitnesszDatabase.Kliensek
+                                                                                               where e.Nev.Contains(keresesiszo)
+                                                                                                  select e.KliensId).Contains(p.KliensId)).ToList();
         }
     }
 }

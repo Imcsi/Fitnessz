@@ -19,7 +19,6 @@ namespace Fitnessz.ViewModel.UserControls
             this.CloseCommand = new RelayCommand(this.CloseCommandExecute);
             this.HozzaadBerletTipusCommand = new RelayCommand(this.HozzaadBerletTipusCommandExecute);
             this.KeresesBerletTipusCommand = new RelayCommand(this.KeresesBerletTipusCommandExecute);
-            this.KeresettAdatMegjelenites = new RelayCommand(this.KeresettAdatMegjelenitesExecute);
             this.ModositasBerletTipusCommand = new RelayCommand(this.ModositasBerletTipusCommandExecute);
             this.TorlesBerletTipusCommand = new RelayCommand(this.TorlesBerletTipusCommandExecute);
         }
