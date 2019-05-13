@@ -12,15 +12,11 @@
         </DataTemplate>
 
         <DataTemplate x:Key="BerletTipusViewTemplate">
-            <userControls:BerletView/>
+            <userControls:BerletTipusView/>
         </DataTemplate>
         
         <DataTemplate x:Key="DefaultHeaderTemplate">
             <TextBlock Text="{Binding Header}"/>
-        </DataTemplate>
-
-        <DataTemplate x:Key="BerletTipusViewTemplate">
-            <userControls:BerletTipusView/>
         </DataTemplate>
 
 
