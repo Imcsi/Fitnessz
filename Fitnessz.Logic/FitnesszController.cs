@@ -16,16 +16,14 @@ namespace Fitnessz.Logic
 
         public FitnesszController()
         {
-             this.fitnesszDatabase = new FitnesszModelDB();
-            // this.fitnesszDatabase.Belepesek.Add(new Model.Belepesek { BelepesekId = 1, Datum = new DateTime(), KliensBerletId = 2 });
-           
+            this.fitnesszDatabase = new FitnesszModelDB();
         }
 
 
-        public  void KliensekMentese(Kliens kliens)
+        public void KliensekMentese(Kliens kliens)
         {
             fitnesszDatabase.Kliensek.Add(kliens);
-             fitnesszDatabase.SaveChanges();
+            fitnesszDatabase.SaveChanges();
         }
         public void KliensBerleteMentese(KliensBerlet kliensBerlet)
         {
@@ -41,12 +39,14 @@ namespace Fitnessz.Logic
 
         public List<KliensBerlet> KeresBerlet(string keresettBerlet)
         {
+            //ezt kell implementalni
+
             throw new NotImplementedException();
         }
 
         public void KliensAdatTorles(Kliens kliens)
         {
-            var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId && k.Inaktiv==false);
+            var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId && k.Inaktiv == false);
 
             if (item != null)
             {
@@ -70,11 +70,11 @@ namespace Fitnessz.Logic
             }
         }
 
-        public  void KliensAdatModositas(Kliens kliens)
+        public void KliensAdatModositas(Kliens kliens)
         {
-            var item =   fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId);
+            var item = fitnesszDatabase.Kliensek.FirstOrDefault(k => k.KliensId == kliens.KliensId);
 
-            if(item != null)
+            if (item != null)
             {
                 item.Nev = kliens.Nev;
                 item.SzuletesiDatum = kliens.SzuletesiDatum;
@@ -87,7 +87,7 @@ namespace Fitnessz.Logic
             }
         }
 
-        public void BelepesSzamNoveles(KliensBerlet berlet,int novel)
+        public void BelepesSzamNoveles(KliensBerlet berlet, int novel)
         {
             var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
             //string iDate = "05/05/2005";
@@ -95,10 +95,10 @@ namespace Fitnessz.Logic
             var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
             if (lejarasiIdo.Date < DateTime.Now.Date)
             {
-                
+
                 item.BelepesekSzama = item.BelepesekSzama + novel;
 
-                fitnesszDatabase.SaveChangesAsync();
+                fitnesszDatabase.SaveChanges();
             }
 
 
@@ -106,7 +106,7 @@ namespace Fitnessz.Logic
 
         public void IdotartamNoveles(KliensBerlet berlet, DateTime novel)
         {
-            
+
             var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
             DateTime oDate = Convert.ToDateTime(berlet.KezdetiNap); // az adatbazisban levo stringet datumma alakitja
             var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
@@ -116,13 +116,13 @@ namespace Fitnessz.Logic
 
                 item.NapokSzama = item.NapokSzama + hozzaadottErtek.Days;
 
-                fitnesszDatabase.SaveChangesAsync();
+                fitnesszDatabase.SaveChanges();
             }
 
 
         }
 
-        
+
 
         public void BerletTipusAdatModositas(Berlet berlet)
         {
@@ -137,17 +137,17 @@ namespace Fitnessz.Logic
                 item.Hanytol = berlet.Hanytol;
                 item.NapokSzama = berlet.NapokSzama;
                 item.NapontaHanyszor = berlet.NapontaHanyszor;
-                
+
 
                 fitnesszDatabase.SaveChanges();
 
             }
         }
 
-        public  List<Kliens> KeresKliens(string nev)
+        public List<Kliens> KeresKliens(string nev)
         {
-            return  fitnesszDatabase.Kliensek.Where(p => p.Nev.Contains(nev) && p.Inaktiv==false).ToList();
-           
+            return fitnesszDatabase.Kliensek.Where(p => p.Nev.Contains(nev) && p.Inaktiv == false).ToList();
+
 
         }
 
@@ -161,8 +161,8 @@ namespace Fitnessz.Logic
         public List<KliensBerlet> KeresesBerlet(string keresesiszo)
         {
             return fitnesszDatabase.KliensBerletek.Where(p => p.VonalKod.Contains(keresesiszo) || (from e in fitnesszDatabase.Kliensek
-                                                                                               where e.Nev.Contains(keresesiszo)
-                                                                                                  select e.KliensId).Contains(p.KliensId)).ToList();
+                                                                                                   where e.Nev.Contains(keresesiszo)
+                                                                                                   select e.KliensId).Contains(p.KliensId)).ToList();
         }
 
     }

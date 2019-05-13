@@ -30,12 +30,26 @@ namespace Fitnessz.ViewModel.UserControls
 
         private void HosszabbitIdotartamCommandExecute()
         {
-            Data.fitnesszController.IdotartamNoveles(KivalasztottBerlet, Idotartam);
-            KeresettAdatMegjelenitesExecute();
+            if (BelepesSzam != 0)
+            {
+                HosszabitBelepesSzamCommandExecute();
+                KeresettAdatMegjelenitesExecute();
+                BelepesSzam = 0;
+
+            }
+            else
+            {
+                Data.fitnesszController.IdotartamNoveles(KivalasztottBerlet, Idotartam);
+                KeresettAdatMegjelenitesExecute();
+                Idotartam = DateTime.Now;
+            }
+            //frissit talalatok
+            KeresesBerletCommandExecute();
         }
 
         private void HosszabitBelepesSzamCommandExecute()
         {
+
             Data.fitnesszController.BelepesSzamNoveles(KivalasztottBerlet, BelepesSzam);
             KeresettAdatMegjelenitesExecute();
         }
@@ -45,7 +59,9 @@ namespace Fitnessz.ViewModel.UserControls
         public DateTime Idotartam
         {
             get { return idotartam; }
-            set { idotartam = value;
+            set
+            {
+                idotartam = value;
                 RaisePropertyChanged();
             }
         }
@@ -56,7 +72,9 @@ namespace Fitnessz.ViewModel.UserControls
         public int BelepesSzam
         {
             get { return belepesSzam; }
-            set { belepesSzam = value;
+            set
+            {
+                belepesSzam = value;
                 RaisePropertyChanged();
             }
         }
@@ -96,7 +114,9 @@ namespace Fitnessz.ViewModel.UserControls
         public bool BerletErvenyesseg
         {
             get { return berletErvenyesseg; }
-            set { berletErvenyesseg = value;
+            set
+            {
+                berletErvenyesseg = value;
                 RaisePropertyChanged();
             }
         }
@@ -183,12 +203,12 @@ namespace Fitnessz.ViewModel.UserControls
 
         public string Header => "BerletHosszabbitas";
 
-        public RelayCommand CloseCommand { get; set;}
+        public RelayCommand CloseCommand { get; set; }
         public RelayCommand KeresesBerletCommand { get; set; }
         public RelayCommand KeresettAdatMegjelenites { get; set; }
         public RelayCommand HosszabitBelepesSzam { get; private set; }
         public RelayCommand HosszabbitIdotartam { get; }
         public string Title { get; private set; }
-   
+
     }
 }

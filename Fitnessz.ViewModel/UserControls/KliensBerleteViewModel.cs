@@ -67,7 +67,9 @@ namespace Fitnessz.ViewModel.UserControls
             set
             {
                 this.kliensId = value;
-                this.Kliensek = Data.fitnesszController.GetKliens(this.kliensId);
+
+                //ezt kell implementalni
+                //this.Kliensek = Data.fitnesszController.GetKliens(this.kliensId);
 
                 this.RaisePropertyChanged();
             }
@@ -82,7 +84,8 @@ namespace Fitnessz.ViewModel.UserControls
             set
             {
                 this.berletTipus = value;
-                this.Berletek = Data.fitnesszController.getBerletek(this.berletTipus);
+                //ezt kell implementalni
+                //this.Berletek = Data.fitnesszController.getBerletek(this.berletTipus);
 
                 this.RaisePropertyChanged();
             }

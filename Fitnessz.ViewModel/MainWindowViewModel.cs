@@ -24,13 +24,14 @@ namespace Fitnessz.ViewModel
         {
 
             KliensViewModel kliensViewModel = new KliensViewModel();
-            BerletTipusViewModel berletTipusViewModel = new BerletTipusViewModel();
+          ;
             BerletHosszabbitasViewModel berletHosszabbitasViewModel = new BerletHosszabbitasViewModel();
+
             this.Contents = new ObservableCollection<FitnesszContent>();
             this.CloseCommand = new RelayCommand(this.CloseCommandExecute);
 
             this.Contents.Add(kliensViewModel);
-            this.selectedContent = kliensViewModel;
+           // this.selectedContent = kliensViewModel;
 
             BerletTipusViewModel berletTipusViewModel = new BerletTipusViewModel();
             this.Contents.Add(berletTipusViewModel);
@@ -38,6 +39,7 @@ namespace Fitnessz.ViewModel
 
             this.Contents.Add(berletHosszabbitasViewModel);
             this.selectedContent = berletHosszabbitasViewModel;
+
             KliensBerleteViewModel kliensBerleteViewModel = new KliensBerleteViewModel();
             this.Contents.Add(kliensBerleteViewModel);
 
