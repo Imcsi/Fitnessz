@@ -30,13 +30,16 @@ namespace Fitnessz.ViewModel
             this.CloseCommand = new RelayCommand(this.CloseCommandExecute);
 
             this.Contents.Add(kliensViewModel);
-            //this.selectedContent = kliensViewModel;
+            this.selectedContent = kliensViewModel;
 
+            BerletTipusViewModel berletTipusViewModel = new BerletTipusViewModel();
             this.Contents.Add(berletTipusViewModel);
             //this.selectedContent = berletTipusViewModel;
 
             this.Contents.Add(berletHosszabbitasViewModel);
             this.selectedContent = berletHosszabbitasViewModel;
+            KliensBerleteViewModel kliensBerleteViewModel = new KliensBerleteViewModel();
+            this.Contents.Add(kliensBerleteViewModel);
 
         }
 
@@ -65,7 +68,7 @@ namespace Fitnessz.ViewModel
 
 
         public RelayCommand CloseCommand { get; set; }
-        public object BerletTipusViewModel { get; }
+
 
         public void CloseCommandExecute()
         {

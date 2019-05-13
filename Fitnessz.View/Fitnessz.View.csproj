@@ -67,6 +67,9 @@
     <Compile Include="UserControls\KliensView.xaml.cs">
       <DependentUpon>KliensView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\KliensBerleteView.xaml.cs">
+      <DependentUpon>KliensBerleteView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml">
@@ -81,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\KliensView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\KliensBerleteView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

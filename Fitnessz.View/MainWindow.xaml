@@ -14,6 +14,10 @@
         <DataTemplate x:Key="BerletTipusViewTemplate">
             <userControls:BerletTipusView/>
         </DataTemplate>
+        <DataTemplate x:Key="KliensBerleteViewTemplate">
+            <userControls:KliensBerleteView/>
+        </DataTemplate>
+
 
         <DataTemplate x:Key="BerletHosszabbitasViewTemplate">
             <userControls:BerletHosszabbitasView/>

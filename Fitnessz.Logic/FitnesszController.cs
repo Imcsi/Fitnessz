@@ -27,6 +27,11 @@ namespace Fitnessz.Logic
             fitnesszDatabase.Kliensek.Add(kliens);
              fitnesszDatabase.SaveChanges();
         }
+        public void KliensBerleteMentese(KliensBerlet kliensBerlet)
+        {
+            fitnesszDatabase.KliensBerletek.Add(kliensBerlet);
+            fitnesszDatabase.SaveChanges();
+        }
 
         public void BerletTipusMentese(Berlet berlet)
         {
@@ -159,5 +164,6 @@ namespace Fitnessz.Logic
                                                                                                where e.Nev.Contains(keresesiszo)
                                                                                                   select e.KliensId).Contains(p.KliensId)).ToList();
         }
+
     }
 }
