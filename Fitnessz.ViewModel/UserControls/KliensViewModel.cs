@@ -190,6 +190,8 @@ namespace Fitnessz.ViewModel.UserControls
 
 
             });
+
+            TorolTextBoxElemek();
         }
 
 
@@ -200,9 +202,9 @@ namespace Fitnessz.ViewModel.UserControls
 
         public RelayCommand HozzaadKliensCommand { get; set; }
         public RelayCommand KeresesKliensCommand { get; set; }
-        public RelayCommand KeresettAdatMegjelenites { get; }
+        public RelayCommand KeresettAdatMegjelenites { get; set; }
         public RelayCommand ModositasKliensCommand { get; private set; }
-        public RelayCommand TorlesKliensCommand { get; }
+        public RelayCommand TorlesKliensCommand { get; set; }
 
         public string Header => "Kliensek";
 

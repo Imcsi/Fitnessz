@@ -12,7 +12,7 @@
         </DataTemplate>
 
         <DataTemplate x:Key="BerletTipusViewTemplate">
-            <userControls:BerletView/>
+            <userControls:BerletTipusView/>
         </DataTemplate>
         <DataTemplate x:Key="KliensBerleteViewTemplate">
             <userControls:KliensBerleteView/>

@@ -17,7 +17,7 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
             }
-            if (item is IBerletContent)
+            if (item is IBerletTipusContent)
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
             }

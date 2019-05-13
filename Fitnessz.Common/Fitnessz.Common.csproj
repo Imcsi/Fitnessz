@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FitnesszContentTypes\FitnesszContent.cs" />
-    <Compile Include="FitnesszContentTypes\IBerletContent.cs" />
+    <Compile Include="FitnesszContentTypes\IBerletTipusContent.cs" />
     <Compile Include="FitnesszContentTypes\IKliensContent.cs" />
     <Compile Include="FitnesszContentTypes\IKliensBerleteContent.cs" />
     <Compile Include="MVVM\RelayCommand.cs" />

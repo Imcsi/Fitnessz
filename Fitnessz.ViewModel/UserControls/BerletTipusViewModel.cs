@@ -11,110 +11,95 @@ using System.Threading.Tasks;
 
 namespace Fitnessz.ViewModel.UserControls
 {
-   public class BerletTipusViewModel:ViewModelBase, INotifyPropertyChanged, IBerletContent
+    public class BerletTipusViewModel : ViewModelBase, INotifyPropertyChanged, IBerletTipusContent
     {
         public static FitnesszController fitnesszController;
-
         public BerletTipusViewModel()
         {
             this.CloseCommand = new RelayCommand(this.CloseCommandExecute);
-            this.HozzaadBerletCommand = new RelayCommand(this.HozzaadBerletCommandExecute);
-            this.KeresesBerletCommand = new RelayCommand(this.KeresesBerletTipusCommandExecute);
+            this.HozzaadBerletTipusCommand = new RelayCommand(this.HozzaadBerletTipusCommandExecute);
+            this.KeresesBerletTipusCommand = new RelayCommand(this.KeresesBerletTipusCommandExecute);
             this.KeresettAdatMegjelenites = new RelayCommand(this.KeresettAdatMegjelenitesExecute);
-            this.ModositasBerletCommand = new RelayCommand(this.ModositasBerletTipusCommandExecute);
-            this.TorlesBerletCommand = new RelayCommand(this.TorlesBerletTipusCommandExecute);
+            this.ModositasBerletTipusCommand = new RelayCommand(this.ModositasBerletTipusCommandExecute);
+            this.TorlesBerletTipusCommand = new RelayCommand(this.TorlesBerletTipusCommandExecute);
         }
 
-        private void TorlesBerletTipusCommandExecute() 
+        private void TorlesBerletTipusCommandExecute()
         {
-            Data.fitnesszController.BerletAdatTorles(KivalasztottBerletTipus);
+            Data.fitnesszController.BerletTipusAdatTorles(KivalasztottBerletTipus);
             KeresesBerletTipusCommandExecute();
             TorolTextBoxElemek();
         }
 
         private void ModositasBerletTipusCommandExecute()
         {
-            Data.fitnesszController.BerletAdatModositas(new Berlet
+            Data.fitnesszController.BerletTipusAdatModositas(new Berlet
             {
-                NapokSzama = BerletNapokSzama,
-                KezdetiNap = BerletKezdetiNap,
-                BelepesekSzama = BerletbelepesekSzama,
-                Ar = BerletAra,
-                Hanytol = BerletHanytol,
-                Hanyig = BerletHanyig
+                BerletId = kivalasztottBerletTipus.BerletId,
+                Tipus = BerletTipus,
+                Ar = Convert.ToInt32(BerletAr),
+                BelepesekSzama = Convert.ToInt32(BerletBelepesekSzama),
+                NapokSzama = Convert.ToInt32(BerletNapokSzama),
+                NapontaHanyszor = Convert.ToInt32(BerletNapontaHanyszor),
+                Hanyig= Convert.ToInt32(BerletHanyig),
+                Hanytol = Convert.ToInt32(BerletHanytol)
+
+
+
             });
+
             KeresesBerletTipusCommandExecute();
             TorolTextBoxElemek();
         }
 
-
-      
-
-        private void TorolTextBoxElemek()
-        {
-            BerletNapokSzama = 0;
-            BerletKezdetiNap = "";
-            BerletbelepesekSzama = 0;
-            BerletAra = 0;
-            BerletHanytol = 0;
-            BerletHanyig = 0;
-
-        }
-
         private void KeresettAdatMegjelenitesExecute()
         {
-
-            BerletNapokSzama = KivalasztottBerletTipus.NapokSzama;
-            BerletKezdetiNap = KivalasztottBerletTipus.KezdetiNap;
-            BerletbelepesekSzama = KivalasztottBerletTipus.BelepesekSzama;
-            BerletAra = KivalasztottBerletTipus.Ar;
-            BerletHanytol = KivalasztottBerletTipus.Hanytol;
-            BerletHanyig = KivalasztottBerletTipus.Hanyig;
-
+            BerletTipus = KivalasztottBerletTipus.Tipus;
+            BerletAr = KivalasztottBerletTipus.Ar.ToString();
+            BerletBelepesekSzama = KivalasztottBerletTipus.BelepesekSzama.ToString();
+            BerletHanyig = KivalasztottBerletTipus.Hanyig.ToString();
+            BerletHanytol = KivalasztottBerletTipus.Hanytol.ToString();
+            BerletNapokSzama = KivalasztottBerletTipus.NapokSzama.ToString();
+            BerletNapontaHanyszor = KivalasztottBerletTipus.NapontaHanyszor.ToString();
 
         }
-
-        private int berletNapokSzama;
-
-        public int BerletNapokSzama
-        {
-            get { return berletNapokSzama; }
-            set
-            {
-                berletNapokSzama = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private string berletKezdetiNap;
-
-        public string BerletKezdetiNap
-        {
-            get { return berletKezdetiNap; }
-            set
-            {
-                berletKezdetiNap = value;
-                RaisePropertyChanged();
-            }
-        }
-
-
-        private Berlet kivalasztottBerlet;
-
-        public Berlet KivalasztottBerletTipus
-        {
-            get { return kivalasztottBerlet; }
-            set
-            {
-                kivalasztottBerlet = value;
-                RaisePropertyChanged();
-            }
-        }
-
 
         private void KeresesBerletTipusCommandExecute()
         {
-            BerletTipusLista = Data.fitnesszController.KeresBerlet(KeresettBerletId);
+            BerletTipusLista = Data.fitnesszController.KeresBerletTipus(KeresettBerletTipus);
+        }
+
+        private void HozzaadBerletTipusCommandExecute()
+        {
+            Data.fitnesszController.BerletTipusMentese(new Berlet
+            {
+                Tipus = BerletTipus,
+                Ar = Convert.ToInt32(BerletAr), 
+                BelepesekSzama = Convert.ToInt32(BerletBelepesekSzama),
+                Hanyig = Convert.ToInt32(BerletHanyig),
+                Hanytol = Convert.ToInt32(BerletHanytol),
+                NapokSzama = Convert.ToInt32(BerletNapokSzama),
+                NapontaHanyszor = Convert.ToInt32(BerletNapontaHanyszor)
+
+            });
+            TorolTextBoxElemek();
+        }
+
+        private void CloseCommandExecute()
+        {
+            ViewService.CloseDialog(this);
+        }
+
+        private string keresettBerletTipus;
+
+        public string KeresettBerletTipus
+        {
+            get { return keresettBerletTipus; }
+            set
+            {
+                keresettBerletTipus = value;
+                this.RaisePropertyChanged();
+            }
         }
 
         private List<Berlet> berletTipusLista;
@@ -130,129 +115,114 @@ namespace Fitnessz.ViewModel.UserControls
             }
         }
 
-
-
-        private int berletbelepesekSzama;
-
-        public int BerletbelepesekSzama
+        private void TorolTextBoxElemek()
         {
-            get { return berletbelepesekSzama; }
-            set
-            {
-                berletbelepesekSzama = value;
-                this.RaisePropertyChanged();
-            }
+            BerletTipus = "";
+            BerletAr = "";
+            BerletNapokSzama = "";
+            BerletNapontaHanyszor = "";
+            BerletBelepesekSzama = "";
+            BerletHanytol = "";
+            BerletHanyig = "";
+
         }
 
-        private int keresettBerletId;
+        private string berletHanyig;
 
-        public int KeresettBerletId
-        {
-            get { return keresettBerletId; }
-            set
-            {
-                keresettBerletId = value;
-                this.RaisePropertyChanged();
-            }
-        }
-
-        private int berletHanytol;
-
-        public int BerletHanytol
-        {
-            get { return berletHanytol; }
-            set
-            {
-                berletHanytol = value;
-                this.RaisePropertyChanged();
-            }
-        }
-
-        private int berletHanyig;
-
-        public int BerletHanyig
+        public string BerletHanyig
         {
             get { return berletHanyig; }
-            set
-            {
-                berletHanyig = value;
-                this.RaisePropertyChanged();
+            set { berletHanyig = value;
+                RaisePropertyChanged();
             }
         }
 
-        private int berletAra;
 
-        public int BerletAra
+        private string berletHanytol;
+
+        public string BerletHanytol
         {
-            get { return berletAra; }
-            set
-            {
-                berletAra = value;
-                this.RaisePropertyChanged();
+            get { return berletHanytol; }
+            set { berletHanytol = value;
+                RaisePropertyChanged();
             }
         }
 
-        private string kliensTelSzam;
 
-        public string KliensTelSzam
+        private string berletBelepesekSzama;
+
+        public string BerletBelepesekSzama
         {
-            get { return kliensTelSzam; }
-            set
-            {
-                kliensTelSzam = value;
-                this.RaisePropertyChanged();
+            get { return berletBelepesekSzama; }
+            set { berletBelepesekSzama = value;
+                RaisePropertyChanged();
             }
         }
 
-        private string kliensVonalKod;
 
-        public string KliensVonalKod
+        private string berletNapontaHanyszor;
+
+        public string BerletNapontaHanyszor
         {
-            get { return kliensVonalKod; }
-            set
-            {
-                kliensVonalKod = value;
-                this.RaisePropertyChanged();
+            get { return berletNapontaHanyszor; }
+            set { berletNapontaHanyszor = value;
+                RaisePropertyChanged();
             }
         }
 
-       
 
+        private string berletNapokSzama;
 
-
-
-        private void HozzaadBerletCommandExecute()
+        public string BerletNapokSzama
         {
-            Data.fitnesszController.BerletekMentese(new Berlet
-            {
-                NapokSzama = BerletNapokSzama,
-                KezdetiNap = BerletKezdetiNap,
-                BelepesekSzama = BerletbelepesekSzama,
-                Ar = BerletAra,
-                Hanytol = BerletHanytol,
-                Hanyig=BerletHanyig
-
-
-            });
+            get { return berletNapokSzama; }
+            set { berletNapokSzama = value;
+                RaisePropertyChanged();
+            }
         }
 
 
+        private string berletAr;
+
+        public string BerletAr
+        {
+            get { return berletAr; }
+            set { berletAr = value;
+                RaisePropertyChanged();
+            }
+        }
 
 
+        private string berletTipus;
+
+        public string BerletTipus
+        {
+            get { return berletTipus; }
+            set { berletTipus = value;
+                RaisePropertyChanged();
+            }
+        }
+
+
+        private Berlet kivalasztottBerletTipus;
+
+        public Berlet KivalasztottBerletTipus
+        {
+            get { return kivalasztottBerletTipus; }
+            set
+            {
+                kivalasztottBerletTipus = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string Header => "BerletTipus";
 
         public RelayCommand CloseCommand { get; set; }
-
-        public RelayCommand HozzaadBerletCommand { get; set; }
-        public RelayCommand KeresesBerletCommand { get; set; }
-        public RelayCommand KeresettAdatMegjelenites { get; }
-        public RelayCommand ModositasBerletCommand { get; private set; }
-        public RelayCommand TorlesBerletCommand { get; }
-
-        public string Header => "Berletek";
-
-        public void CloseCommandExecute()
-        {
-            ViewService.CloseDialog(this);
-        }
+        public RelayCommand HozzaadBerletTipusCommand { get; set; }
+        public RelayCommand KeresesBerletTipusCommand { get; set; }
+        public RelayCommand KeresettAdatMegjelenites { get; set; }
+        public RelayCommand ModositasBerletTipusCommand { get; set; }
+        public RelayCommand TorlesBerletTipusCommand { get; set; }
     }
 }

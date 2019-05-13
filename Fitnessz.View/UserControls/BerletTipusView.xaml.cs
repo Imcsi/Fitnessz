@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Fitnessz.View.UserControls
 {
     /// <summary>
-    /// Interaction logic for BerletView.xaml
+    /// Interaction logic for BerletTipusView.xaml
     /// </summary>
-    public partial class BerletView : UserControl
+    public partial class BerletTipusView : UserControl
     {
-        public BerletView()
+        public BerletTipusView()
         {
             InitializeComponent();
         }
