@@ -33,6 +33,9 @@ namespace Fitnessz.ViewModel
             this.Contents.Add(berletTipusViewModel);
             this.selectedContent = berletTipusViewModel;
 
+            BerletTipusViewModel berletTipusViewModel = new BerletTipusViewModel();
+            this.Contents.Add(berletTipusViewModel);
+
         }
 
         private FitnesszContent selectedContent;
