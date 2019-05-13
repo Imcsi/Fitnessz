@@ -82,6 +82,7 @@ namespace Fitnessz.ViewModel.UserControls
                 NapontaHanyszor = Convert.ToInt32(BerletNapontaHanyszor)
 
             });
+            TorolTextBoxElemek();
         }
 
         private void CloseCommandExecute()
