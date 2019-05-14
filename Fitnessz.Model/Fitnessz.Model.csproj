@@ -85,9 +85,9 @@
     <Compile Include="Migrations\201905131045470_kliensberlet.Designer.cs">
       <DependentUpon>201905131045470_kliensberlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905131413344_kliensberlet1.cs" />
-    <Compile Include="Migrations\201905131413344_kliensberlet1.Designer.cs">
-      <DependentUpon>201905131413344_kliensberlet1.cs</DependentUpon>
+    <Compile Include="Migrations\201905131740394_mi.cs" />
+    <Compile Include="Migrations\201905131740394_mi.Designer.cs">
+      <DependentUpon>201905131740394_mi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="Migrations\201905131045470_kliensberlet.resx">
       <DependentUpon>201905131045470_kliensberlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905131413344_kliensberlet1.resx">
-      <DependentUpon>201905131413344_kliensberlet1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131740394_mi.resx">
+      <DependentUpon>201905131740394_mi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
