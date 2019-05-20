@@ -120,21 +120,31 @@ namespace Fitnessz.Logic
             //string iDate = "05/05/2005";
             DateTime oDate = Convert.ToDateTime(berlet.KezdetiNap);
             var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
-            if (lejarasiIdo.Date > DateTime.Now.Date)
+            if (lejarasiIdo.Date > DateTime.Now.Date && item.Ervenyesseg == true)
             {
+                ervenyesBerlet = true;
+            }
+            else
+            {
+                ervenyesBerlet = false;
+            }
 
+            return ervenyesBerlet;
+        }
+
+        public void BerletKezelese(KliensBerlet berlet)
+        {
+            var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
+            if (ErvenyesBerlet(berlet) == true)
+            {
                 item.BelepesekSzama = item.BelepesekSzama - 1;
                 fitnesszDatabase.SaveChanges();
-                ervenyesBerlet = true;
             }
             else
             {
                 item.Ervenyesseg = false;
                 fitnesszDatabase.SaveChanges();
-                ervenyesBerlet = false;
             }
-
-            return ervenyesBerlet;
         }
 
         public void IdotartamNoveles(KliensBerlet berlet, DateTime novel)

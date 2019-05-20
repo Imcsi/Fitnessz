@@ -20,24 +20,20 @@ namespace Fitnessz.ViewModel.UserControls
             this.KeresesKliensCommand = new RelayCommand(this.KeresesKliensCommandExecute);
             this.KeresettAdatMegjelenites = new RelayCommand(this.KeresettAdatMegjelenitesExecute);
             this.BelepesKliensCommand = new RelayCommand(this.BelepesKliensCommandExecute);
-            Elerheto = true;
+
         }
 
         private void BelepesKliensCommandExecute()
         {
             
-            if (Data.fitnesszController.ErvenyesBerlet(KivalasztottKliens) == true)
-            {
-                KeresettAdatMegjelenitesExecute();
-            }
-            else
-            {
-                Elerheto = false;
-            }
+            Data.fitnesszController.BerletKezelese(ElsoElemKivalasztasa());
+            KeresesKliensCommandExecute();
+
         }
 
         private void KeresettAdatMegjelenitesExecute()
         {
+
             KliensNev = KivalasztottKliens.Kliens.Nev.ToString();
             KliensSzulDatum = KivalasztottKliens.Kliens.SzuletesiDatum.ToString();
             KliensTelSzam = KivalasztottKliens.Kliens.TelSzam.ToString();
@@ -47,13 +43,27 @@ namespace Fitnessz.ViewModel.UserControls
             BerletBelepesekSzama = KivalasztottKliens.BelepesekSzama.ToString();
             BerletEladasiAr = KivalasztottKliens.EladasiAr.ToString();
             BerletErvenyesseg = KivalasztottKliens.Ervenyesseg;
-           
+
+        }
+
+        private KliensBerlet ElsoElemKivalasztasa()
+        {
+            return KliensAdatok.FirstOrDefault();
         }
 
 
         private void KeresesKliensCommandExecute()
         {
             KliensAdatok = Data.fitnesszController.KeresesKliens(KeresettKliens);
+
+            if (Data.fitnesszController.ErvenyesBerlet(ElsoElemKivalasztasa()) == true)
+            {
+                Elerheto = true;
+            }
+            else
+            {
+                Elerheto = false;
+            }
         }
 
         private bool elerheto;
