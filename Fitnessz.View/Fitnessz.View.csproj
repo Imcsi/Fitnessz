@@ -60,11 +60,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemplateSelector\FitnesszContentTemplateSelector.cs" />
     <Compile Include="TemplateSelector\FitnesszHeaderTemplateSelector.cs" />
+<<<<<<< HEAD
     <Compile Include="UserControls\BelepesekListazasaView.xaml.cs">
       <DependentUpon>BelepesekListazasaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\BerletekListazasaView.xaml.cs">
       <DependentUpon>BerletekListazasaView.xaml</DependentUpon>
+=======
+    <Compile Include="UserControls\BelepesekKoveteseView.xaml.cs">
+      <DependentUpon>BelepesekKoveteseView.xaml</DependentUpon>
+>>>>>>> b9c4b83cdd02d4904cded5a9c366f7a9284f8fbb
     </Compile>
     <Compile Include="UserControls\BerletHosszabbitasView.xaml.cs">
       <DependentUpon>BerletHosszabbitasView.xaml</DependentUpon>
@@ -86,11 +91,13 @@
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="UserControls\BelepesekListazasaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BerletekListazasaView.xaml">
+=======
     <Page Include="UserControls\BelepesekKoveteseView.xaml">
 >>>>>>> b9c4b83cdd02d4904cded5a9c366f7a9284f8fbb
       <SubType>Designer</SubType>
