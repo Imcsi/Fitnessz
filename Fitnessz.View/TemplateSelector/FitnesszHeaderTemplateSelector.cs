@@ -42,6 +42,10 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
             }
+            if (item is IBelepesekKoveteseContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
+            }
 
 
             return base.SelectTemplate(item, container);

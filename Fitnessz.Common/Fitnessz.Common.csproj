@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FitnesszContentTypes\FitnesszContent.cs" />
+    <Compile Include="FitnesszContentTypes\IBelepesekKoveteseContent.cs" />
     <Compile Include="FitnesszContentTypes\IBelepesekListazasaContent.cs" />
     <Compile Include="FitnesszContentTypes\IBerletekListazasaContent.cs" />
     <Compile Include="FitnesszContentTypes\IBerletHosszabbitasContent.cs" />

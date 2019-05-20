@@ -52,6 +52,10 @@ namespace Fitnessz.ViewModel
             BelepesekListazasaViewModel belepesekListazasaViewModel = new BelepesekListazasaViewModel();
             this.Contents.Add(belepesekListazasaViewModel);
 
+            BelepesekKoveteseViewModel belepesekKoveteseViewModel = new BelepesekKoveteseViewModel();
+            this.Contents.Add(belepesekKoveteseViewModel);
+
+
         }
 
         private FitnesszContent selectedContent;

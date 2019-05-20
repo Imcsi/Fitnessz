@@ -48,7 +48,8 @@ namespace Fitnessz.ViewModel.UserControls
 
         private KliensBerlet ElsoElemKivalasztasa()
         {
-            return KliensAdatok.FirstOrDefault();
+            var item =  KliensAdatok.FirstOrDefault();
+            return item;
         }
 
 
@@ -56,14 +57,19 @@ namespace Fitnessz.ViewModel.UserControls
         {
             KliensAdatok = Data.fitnesszController.KeresesKliens(KeresettKliens);
 
-            if (Data.fitnesszController.ErvenyesBerlet(ElsoElemKivalasztasa()) == true)
+            if (KliensAdatok.Count != 0)
             {
-                Elerheto = true;
+                if (Data.fitnesszController.ErvenyesBerlet(ElsoElemKivalasztasa()) == true)
+                {
+                    Elerheto = true;
+                }
+                else
+                {
+                    Elerheto = false;
+                }
+
             }
-            else
-            {
-                Elerheto = false;
-            }
+            
         }
 
         private bool elerheto;
@@ -208,6 +214,7 @@ namespace Fitnessz.ViewModel.UserControls
             {
                 kliensAdatok = value;
                 RaisePropertyChanged();
+                
 
             }
         }
