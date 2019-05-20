@@ -103,6 +103,15 @@ namespace Fitnessz.Logic
 
 
         }
+        public List<Kliens> GetKliensek()
+        {
+            return this.fitnesszDatabase.Kliensek.ToList();
+        }
+        public List<Berlet> GetBerletek()
+        {
+            return this.fitnesszDatabase.Berletek.ToList();
+        }
+
 
         public bool ErvenyesBerlet(KliensBerlet berlet)
         {
@@ -174,7 +183,43 @@ namespace Fitnessz.Logic
 
 
         }
+        public List<Kliens> GetKliens(int kliensId)
+        {
+            return fitnesszDatabase.Kliensek.Where(p => p.KliensId==kliensId).ToList();
 
+
+        }
+
+        
+            public List<Berlet> GetBerlet(int berletId)
+        {
+            return fitnesszDatabase.Berletek.Where(p => p.BerletId ==berletId ).ToList();
+
+
+        }
+
+        public int GetBerletAr(int kivalasztottBerlet)
+        {
+            return (from e in fitnesszDatabase.Berletek
+                    where e.BerletId == kivalasztottBerlet
+                    select (e.Ar)).First();
+
+
+        }
+        public int GetBerletNapokSzama(int kivalasztottBerlet)
+        {
+            return (from e in fitnesszDatabase.Berletek
+                    where e.BerletId == kivalasztottBerlet
+                    select (e.NapokSzama)).First();
+        }
+        public string GetVonalKod(int kivalasztottKliens)
+        {
+            return (from e in fitnesszDatabase.Kliensek
+                    where e.KliensId == kivalasztottKliens
+                    select (e.VonalKod)).First();
+
+
+        }
         public List<Berlet> KeresBerletTipus(string tipus)
         {
             return fitnesszDatabase.Berletek.Where(p => p.Tipus.Contains(tipus) && p.Inaktiv == false).ToList();

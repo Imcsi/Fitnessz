@@ -7,13 +7,13 @@ namespace Fitnessz.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class kliensberlet1 : IMigrationMetadata
+    public sealed partial class mi : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(kliensberlet1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mi));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905131413344_kliensberlet1"; }
+            get { return "201905131740394_mi"; }
         }
         
         string IMigrationMetadata.Source

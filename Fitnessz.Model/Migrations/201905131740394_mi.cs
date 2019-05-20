@@ -3,12 +3,12 @@ namespace Fitnessz.Model.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class kliensberlet1 : DbMigration
+    public partial class mi : DbMigration
     {
         public override void Up()
         {
             CreateIndex("dbo.KliensBerlets", "KliensId");
-            AddForeignKey("dbo.KliensBerlets", "KliensId", "dbo.Kliens", "KliensId", cascadeDelete: true);
+          //  AddForeignKey("dbo.KliensBerlets", "KliensId", "dbo.Kliens", "KliensId", cascadeDelete: true);
         }
         
         public override void Down()
