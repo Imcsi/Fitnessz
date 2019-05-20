@@ -29,6 +29,7 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
             }
+
             if (item is IUgyfelekListazasaContent)
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
@@ -41,6 +42,7 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("DefaultHeaderTemplate") as DataTemplate;
             }
+
 
             return base.SelectTemplate(item, container);
 

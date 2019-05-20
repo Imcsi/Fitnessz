@@ -48,8 +48,12 @@
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="UserControls\BelepesekListazasaViewModel.cs" />
     <Compile Include="UserControls\BerletekListazasaViewModel.cs" />
+=======
+    <Compile Include="UserControls\BelepesekKoveteseViewModel.cs" />
+>>>>>>> b9c4b83cdd02d4904cded5a9c366f7a9284f8fbb
     <Compile Include="UserControls\BerletHosszabbitasViewModel.cs" />
     <Compile Include="UserControls\BerletTipusViewModel.cs" />
     <Compile Include="UserControls\KliensBerleteViewModel.cs" />

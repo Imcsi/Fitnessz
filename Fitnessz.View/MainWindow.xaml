@@ -18,10 +18,10 @@
             <userControls:KliensBerleteView/>
         </DataTemplate>
 
-
         <DataTemplate x:Key="BerletHosszabbitasViewTemplate">
             <userControls:BerletHosszabbitasView/>
         </DataTemplate>
+
 
         <DataTemplate x:Key="UgyfelekListazasaViewTemplate">
             <userControls:UgyfelekListazasaView/>
@@ -34,6 +34,7 @@
         <DataTemplate x:Key="BelepesekListazasaViewTemplate">
             <userControls:BelepesekListazasaView/>
         </DataTemplate>
+        
 
         <DataTemplate x:Key="DefaultHeaderTemplate">
             <TextBlock Text="{Binding Header}"/>
