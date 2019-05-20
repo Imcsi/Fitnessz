@@ -91,6 +91,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BerletekListazasaView.xaml">
+    <Page Include="UserControls\BelepesekKoveteseView.xaml">
+>>>>>>> b9c4b83cdd02d4904cded5a9c366f7a9284f8fbb
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
