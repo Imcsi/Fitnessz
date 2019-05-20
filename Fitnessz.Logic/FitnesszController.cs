@@ -104,6 +104,30 @@ namespace Fitnessz.Logic
 
         }
 
+        public bool ErvenyesBerlet(KliensBerlet berlet)
+        {
+            bool ervenyesBerlet = false;
+            var item = fitnesszDatabase.KliensBerletek.Find(berlet.KliensBerletId);
+            //string iDate = "05/05/2005";
+            DateTime oDate = Convert.ToDateTime(berlet.KezdetiNap);
+            var lejarasiIdo = oDate.AddDays(berlet.NapokSzama);
+            if (lejarasiIdo.Date > DateTime.Now.Date)
+            {
+
+                item.BelepesekSzama = item.BelepesekSzama - 1;
+                fitnesszDatabase.SaveChanges();
+                ervenyesBerlet = true;
+            }
+            else
+            {
+                item.Ervenyesseg = false;
+                fitnesszDatabase.SaveChanges();
+                ervenyesBerlet = false;
+            }
+
+            return ervenyesBerlet;
+        }
+
         public void IdotartamNoveles(KliensBerlet berlet, DateTime novel)
         {
 
@@ -163,6 +187,11 @@ namespace Fitnessz.Logic
             return fitnesszDatabase.KliensBerletek.Where(p => p.VonalKod.Contains(keresesiszo) || (from e in fitnesszDatabase.Kliensek
                                                                                                    where e.Nev.Contains(keresesiszo)
                                                                                                    select e.KliensId).Contains(p.KliensId)).ToList();
+        }
+
+        public List<KliensBerlet> KeresesKliens(string keresesiszo)
+        {
+            return fitnesszDatabase.KliensBerletek.Where(p => p.VonalKod == keresesiszo).ToList();
         }
 
     }

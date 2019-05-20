@@ -18,9 +18,12 @@
             <userControls:KliensBerleteView/>
         </DataTemplate>
 
-
         <DataTemplate x:Key="BerletHosszabbitasViewTemplate">
             <userControls:BerletHosszabbitasView/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="BelepesekKoveteseViewTemplate">
+            <userControls:BelepesekKoveteseView/>
         </DataTemplate>
 
         <DataTemplate x:Key="DefaultHeaderTemplate">
