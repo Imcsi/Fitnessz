@@ -10,14 +10,14 @@
         <Grid Margin="5">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
@@ -50,14 +50,13 @@
                
 
             </DataGrid>
-            <ComboBox  Grid.Column="0" Grid.Row="0"  ItemsSource="{Binding Kliensek}" DisplayMemberPath="Nev" 
-                      SelectedValue="{Binding KliensId, Mode=TwoWay}"
+            <ComboBox  Grid.Column="0" Grid.Row="0"  ItemsSource="{Binding Berletek}" DisplayMemberPath="Tipus" 
+                      SelectedValue="{Binding BerletId, Mode=TwoWay}"
                       SelectedValuePath="KliensId" />
             <ComboBox  Grid.Column="0" Grid.Row="1" Margin="3" ItemsSource="{Binding Berletek}" DisplayMemberPath="NapokSzama" 
                       SelectedValue="{Binding BerletId, Mode=TwoWay}" 
                       SelectedValuePath="BerletId" />
 
-            <Button Grid.Row="3" Grid.Column="1" Content="Kereses" Command="{Binding KeresesBerletCommand, Mode=TwoWay}"/>
 
 
 

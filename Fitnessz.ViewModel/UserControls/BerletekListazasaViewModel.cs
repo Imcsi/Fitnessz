@@ -85,11 +85,25 @@ namespace Fitnessz.ViewModel.UserControls
                 this.RaisePropertyChanged();
             }
         }
-      
-    
+        private string berletTipus;
+        public string BerletTipus
+        {
+            get
+            {
+                return berletTipus;
+            }
+            set
+            {
+                this.berletTipus = value;
+                this.Berletek = Data.fitnesszController.KeresBerletTipus(this.berletTipus);
+
+                this.RaisePropertyChanged();
+            }
+        }
 
 
-    private List<Berlet> berletek;
+
+        private List<Berlet> berletek;
 
         public List<Berlet> Berletek
         {

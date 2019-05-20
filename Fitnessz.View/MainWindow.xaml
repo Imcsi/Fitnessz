@@ -30,6 +30,10 @@
         <DataTemplate x:Key="BerletekListazasaViewTemplate">
             <userControls:BerletekListazasaView/>
         </DataTemplate>
+        <DataTemplate x:Key="BelepesekListazasaViewTemplate">
+            <userControls:BelepesekListazasaView/>
+        </DataTemplate>
+
 
         <DataTemplate x:Key="BelepesekKoveteseViewTemplate">
             <userControls:BelepesekKoveteseView/>
