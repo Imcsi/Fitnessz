@@ -31,7 +31,18 @@ namespace Fitnessz.View.TemplateSelector
             {
                 return Application.Current.MainWindow.TryFindResource("BerletHosszabbitasViewTemplate") as DataTemplate;
             }
-
+            else if (item is IUgyfelekListazasaContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("UgyfelekListazasaViewTemplate") as DataTemplate;
+            }
+            else if (item is IBerletekListazasaContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("BerletekListazasaViewTemplate") as DataTemplate;
+            }
+            else if (item is IBelepesekListazasaContent)
+            {
+                return Application.Current.MainWindow.TryFindResource("BelepesekListazasaViewTemplate") as DataTemplate;
+            }
 
             return base.SelectTemplate(item, container);
         }

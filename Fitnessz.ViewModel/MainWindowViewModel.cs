@@ -24,7 +24,7 @@ namespace Fitnessz.ViewModel
         {
 
             KliensViewModel kliensViewModel = new KliensViewModel();
-          ;
+          
             BerletHosszabbitasViewModel berletHosszabbitasViewModel = new BerletHosszabbitasViewModel();
 
             this.Contents = new ObservableCollection<FitnesszContent>();
@@ -42,6 +42,15 @@ namespace Fitnessz.ViewModel
 
             KliensBerleteViewModel kliensBerleteViewModel = new KliensBerleteViewModel();
             this.Contents.Add(kliensBerleteViewModel);
+
+            UgyfelekListazasaViewModel ugyfelekListazasaViewModel = new UgyfelekListazasaViewModel();
+            this.Contents.Add(ugyfelekListazasaViewModel);
+
+            BerletekListazasaViewModel berletekListazasaViewModel = new BerletekListazasaViewModel();
+            this.Contents.Add(berletekListazasaViewModel);
+
+            BelepesekListazasaViewModel belepesekListazasaViewModel = new BelepesekListazasaViewModel();
+            this.Contents.Add(belepesekListazasaViewModel);
 
         }
 
@@ -77,7 +86,7 @@ namespace Fitnessz.ViewModel
             ViewService.CloseDialog(this);
         }
 
-        
-
+       
+       
     }
 }

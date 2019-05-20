@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FitnesszContentTypes\FitnesszContent.cs" />
+    <Compile Include="FitnesszContentTypes\IBelepesekListazasaContent.cs" />
+    <Compile Include="FitnesszContentTypes\IBerletekListazasaContent.cs" />
     <Compile Include="FitnesszContentTypes\IBerletHosszabbitasContent.cs" />
     <Compile Include="FitnesszContentTypes\IBerletTipusContent.cs" />
     <Compile Include="FitnesszContentTypes\IKliensContent.cs" />
     <Compile Include="FitnesszContentTypes\IKliensBerleteContent.cs" />
+    <Compile Include="FitnesszContentTypes\IUgyfelekListazasaContent.cs" />
     <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="MVVM\ViewModelBase.cs" />
     <Compile Include="MVVM\ViewService.cs" />

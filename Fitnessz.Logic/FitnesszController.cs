@@ -107,11 +107,24 @@ namespace Fitnessz.Logic
         {
             return this.fitnesszDatabase.Kliensek.ToList();
         }
+
+
+        public List<Kliens> GetKliensNeve()
+        {
+            return this.fitnesszDatabase.Kliensek.ToList();
+        }
+
+        
+
+
         public List<Berlet> GetBerletek()
         {
             return this.fitnesszDatabase.Berletek.ToList();
         }
-
+        public List<Belepes> GetBelepesek()
+        {
+            return this.fitnesszDatabase.Belepesek.ToList();
+        }
 
         public void IdotartamNoveles(KliensBerlet berlet, DateTime novel)
         {
